@@ -1,0 +1,169 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dgloriod <dgloriod@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/11 11:28:59 by dgloriod          #+#    #+#             */
+/*   Updated: 2021/10/28 18:57:47 by dgloriod         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include "libft.h"
+
+int	main(int argc, char **argv)
+{
+	(void) argc;
+	(void) argv;
+	// (void) argc;
+	// (void) argv;
+	// if (argc < 2)
+	// {
+	// 	printf("Please set a string");
+	// 	return (0);
+	// }
+	// /*printf("args:\n");
+	//
+	// int	i;
+	//
+	// i = 0;
+	// while (i < argc)
+	// {
+	// 	printf("argv[%d]: %s\n", i, argv[i]);
+	// 	i++;
+	// }
+	//
+	// if (!strcmp(argv[1], "isalpha"))
+	// 	printf("Is alpha: %d => %d\n", ft_isalpha((int) argv[2][0]), isalpha((int) argv[2][0]));
+	// else if (!strcmp(argv[1], "isdigit"))
+	// 	printf("Is digit: %d => %d\n", ft_isdigit((int) argv[2][0]), isdigit((int) argv[2][0]));
+	// else if (!strcmp(argv[1], "isalnum"))
+	// 	printf("Is alnum: %d => %d\n", ft_isalnum((int) argv[2][0]), isalnum((int) argv[2][0]));
+	// else if (!strcmp(argv[1], "atoi"))
+	// 	printf("Atoi: %d => %d\n", ft_atoi(argv[2]), atoi(argv[2]));
+	// else if (!strcmp(argv[1], "strncmp"))
+	// 	printf("Strncmp: %d => %d\n", ft_strncmp(argv[2], argv[3], ft_atoi(argv[4])), strncmp(argv[2], argv[3], ft_atoi(argv[4])));
+	// else if (!strcmp(argv[1], "strrchr"))
+	// 	printf("Strrchr: %s => %s\n", ft_strrchr(argv[2], (int) argv[3][0]), strrchr(argv[2], (int) argv[3][0]));
+	// else if (!strcmp(argv[1], "strchr"))
+	// 	printf("Strchr: %s => %s\n", ft_strchr(argv[2], (int) argv[3][0]), strchr(argv[2], (int) argv[3][0]));
+	// else if (!strcmp(argv[1], "toupper"))
+	// 	printf("Toupper: %c => %c\n", ft_toupper(argv[2][0]), toupper(argv[2][0]));
+	// else if (!strcmp(argv[1], "tolower"))
+	// 	printf("Tolower: %c => %c\n", ft_tolower(argv[2][0]), tolower(argv[2][0]));
+	// // else if (!strcmp(argv[1], "strlcat"))
+	// // {
+	// // 	char *ft_data = argv[2];
+	// // 	char *data = argv[2];
+	// //
+	// // 	printf("FT: %zu\n", ft_strlcat(argv[2], argv[3], ft_atoi(argv[4])));
+	// // 	printf("STR: %lu\n", strlcat(argv[2], argv[3], atoi(argv[4])));
+	// //
+	// // 	printf("%s => %s\n", ft_data, data);
+	// // }
+	// // else if (!strcmp(argv[1], "strlcpy"))
+	// // {
+	// // 	char *ft_data = argv[2];
+	// // 	char *data = argv[2];
+	// //
+	// // 	printf("%zu\n", ft_strlcpy(argv[2], argv[3], ft_atoi(argv[4])));
+	// // 	printf("%lu\n", strlcpy(argv[2], argv[3], atoi(argv[4])));
+	// // 	printf("%s => %s\n", ft_data, data);
+	// // }
+	// // else if (!strcmp(argv[1], "strnstr"))
+	// // 	printf("Strnstr: %s => %s\n", ft_strnstr(argv[2], argv[3], ft_atoi(argv[4])), strnstr(argv[2], argv[3], ft_atoi(argv[4])));
+	// else if (!strcmp(argv[1], "memchr"))
+	// {
+	// 	printf("Memchr: %s => %s\n", (char *) ft_memchr(argv[2], argv[3][0], ft_atoi(argv[4])), (char *) memchr(argv[2], argv[3][0], atoi(argv[4])));
+	// }
+	// else if (!strcmp(argv[1], "bzero"))
+	// {
+	// 	char *ft_data = argv[2];
+	// 	char *data = argv[2];
+	// 	ft_bzero(ft_data, ft_atoi(argv[3]));
+	// 	bzero(data, ft_atoi(argv[3]));
+	// 	printf("Bzero: %s => %s\n", ft_data, data);
+	// }
+	// else if (!strcmp(argv[1], "memset"))
+	// {
+	// 	char ft_data[ft_atoi(argv[2])];
+	// 	char data[ft_atoi(argv[2])];
+	// 	ft_memset(ft_data, (int) argv[3][0], ft_atoi(argv[4]));
+	// 	memset(data, (int) argv[3][0], atoi(argv[4]));
+	// 	printf("Memset: %s => %s\n", ft_data, data);
+	// }
+	// else if (!strcmp(argv[1], "memmove"))
+	// {
+	// 	printf("Memmove: %s => %s\n", (char *) memmove(argv[2], argv[3], ft_atoi(argv[4])), (char *) ft_memcpy(argv[2], argv[3], ft_atoi(argv[4])));
+	// }
+	// else if (!strcmp(argv[1], "memcpy"))
+	// {
+	// 	printf("Memmove: %s => %s\n", (char *) ft_memmove(argv[3] + ft_atoi(argv[2]), argv[3], ft_atoi(argv[4])), (char *) memmove(argv[3] + atoi(argv[2]), argv[3], atoi(argv[4])));
+	// }
+	// else if (!strcmp(argv[1], "substr"))
+	// 	printf("Substr: %s\n", ft_substr(argv[2], ft_atoi(argv[3]), ft_atoi(argv[4])));
+	// else if (!strcmp(argv[1], "strjoin"))
+	// {
+	// 	char *s1 = "my favorite animal is";
+	// 	char *s2 = " ";
+	// 	char *s3 = "the nyancat";
+	// 	char *res = ft_strjoin(ft_strjoin(s1, s2), s3);
+	// 	printf("Strjoin: %s\n", ft_strjoin(argv[2], argv[3]));
+	// 	if (!strcmp(res, "my favorite animal is the nyancat"))
+	// 	{
+	// 		printf("SUCCESS\n");
+	// 	}
+	// 	else{
+	// 		printf("FAILED\n");
+	// 	}
+	// }
+	// else if (!strcmp(argv[1], "strtrim"))
+	// 	printf("Trimmed: %s\n", ft_strtrim(argv[2], argv[3]));
+	// else if (!strcmp(argv[1], "split"))
+	// {
+	// 	//ft_split(argv[2], argv[3][0]);
+	// 	char **split;
+	//   split = (char **) ft_split("\0aa\0bbb", '\0');
+	// 	printf("Split:\n");
+	// 	int i = 0;
+	// 	while (split[i] && split[i][0])
+	// 	{
+	// 		printf("%d: %s\n", i, split[i]);
+	// 		free(split[i]);
+	// 		i++;
+	// 	}
+	// 	free(split);
+	// }
+	// else if (!strcmp(argv[1], "itoa"))
+	// 	printf("Itoa: %s\n", ft_itoa(ft_atoi(argv[2])));
+	// else if (!strcmp(argv[1], "putchar_fd"))
+	// {
+	// 	printf("Putchar fd:\n");
+	// 	ft_putchar_fd(argv[2][0], ft_atoi(argv[3]));
+	// }
+	// else if (!strcmp(argv[1], "putstr_fd"))
+	// {
+	// 	printf("Putstr fd:\n");
+	// 	ft_putstr_fd(argv[2], ft_atoi(argv[3]));
+	// }
+	// else if (!strcmp(argv[1], "putendl_fd"))
+	// {
+	// 	printf("Putendlfd:\n");
+	// 	ft_putendl_fd(argv[2], ft_atoi(argv[3]));
+	// }
+	// else if (!strcmp(argv[1], "putnbr_fd"))
+	// {
+	// 	printf("Putnbrfd:\n");
+	// 	ft_putnbr_fd(ft_atoi(argv[2]), ft_atoi(argv[3]));
+	// }
+	// else if (!strcmp(argv[1], "memcmp"))
+	// 	printf("Memcmp: %d => %d", ft_memcmp(argv[2], argv[3], ft_atoi(argv[4])), memcmp(argv[2], argv[3], ft_atoi(argv[4])));
+	// else if (!strcmp(argv[1], "strdup"))
+	// 	printf("Strdup: %s => %s", ft_strdup(argv[2]), strdup(argv[2]));
+	return (0);
+}
