@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dgloriod <marvin@42lausanne.ch>            +#+  +:+       +#+        */
+/*   By: dgloriod <dgloriod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 16:46:05 by dgloriod          #+#    #+#             */
-/*   Updated: 2021/11/02 16:48:14 by dgloriod         ###   ########.fr       */
+/*   Updated: 2021/11/04 18:33:28 by dgloriod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,6 @@
 # include <stddef.h>
 # include <stdlib.h>
 
-int		ft_isspace(unsigned char c);
-int		ft_islower(int c);
-int		ft_isupper(int c);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
@@ -26,7 +23,7 @@ int		ft_isprint(int c);
 size_t	ft_strlen(const char *str);
 void	*ft_memset(void *b, unsigned char c, int len);
 void	*ft_calloc(size_t count, size_t size);
-void	ft_bzero(void *s, int n);
+void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);

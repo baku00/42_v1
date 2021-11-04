@@ -6,7 +6,7 @@
 /*   By: dgloriod <dgloriod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 14:37:22 by dgloriod          #+#    #+#             */
-/*   Updated: 2021/10/29 15:36:05 by dgloriod         ###   ########.fr       */
+/*   Updated: 2021/11/04 18:34:23 by dgloriod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_tolower(int c)
 {
-	if (ft_isupper(c))
+	if (c >= 'A' && c <= 'Z')
 		c += 32;
 	return (c);
 }

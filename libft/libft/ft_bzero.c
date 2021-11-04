@@ -6,16 +6,16 @@
 /*   By: dgloriod <dgloriod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 14:37:22 by dgloriod          #+#    #+#             */
-/*   Updated: 2021/10/21 19:28:13 by dgloriod         ###   ########.fr       */
+/*   Updated: 2021/11/04 15:24:07 by dgloriod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, int n)
+void	ft_bzero(void *s, size_t n)
 {
 	char	*b;
-	int		i;
+	size_t	i;
 
 	b = s;
 	i = 0;
