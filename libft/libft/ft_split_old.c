@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_split_old.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgloriod <dgloriod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 14:37:22 by dgloriod          #+#    #+#             */
-/*   Updated: 2021/11/05 18:20:25 by dgloriod         ###   ########.fr       */
+/*   Updated: 2021/11/05 18:56:02 by dgloriod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,11 +49,23 @@ static char	**ft_reset(char **result, int words)
 	return (0);
 }
 
+static void	ft_copy_word(char *result, char *str, int copy)
+{
+	while (str[copy])
+	{
+		result[copy] = str[copy];
+		copy++;
+	}
+	result[copy] = '\0';
+	free(str);
+}
+
 static char	**ft_set_words(char **result, char const *str, char c, int words)
 {
 	int		i;
 	int		j;
 	int		word;
+	char	*s;
 
 	i = 0;
 	j = 0;
@@ -62,9 +74,13 @@ static char	**ft_set_words(char **result, char const *str, char c, int words)
 	{
 		while (str[i] != c && str[i])
 			i++;
-		result[word] = ft_substr(str, j, ((i - 1) - j) + 1);
+		result[word] = ft_calloc(((i - 1) - j) + 1, sizeof(char));
 		if (!result[word])
 			return (ft_reset(result, words));
+		s = ft_substr(str, j, ((i - 1) - j) + 1);
+		if (!s)
+			return (0);
+		ft_copy_word(result[word], s, 0);
 		while (str[i] == c && str[i])
 			i++;
 		j = i;
